@@ -20,11 +20,3 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
-
-
-class Produto(models.Model):
-    nome_produto = models.CharField(max_length=30, blank=False, null=False,)
-    preco = models.IntegerField(blank=False, null=False)
-
-    def __str__(self):
-        return self.nome_produto

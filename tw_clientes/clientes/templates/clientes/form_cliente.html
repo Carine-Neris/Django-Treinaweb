@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Cliente</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        {{ form.nome.errors }}
+        <label>Nome: </label>
+        {{ form.nome }}
+    </div>
+    <div>
+        {{ form.data_nascimento.errors }}
+        <label>Data de Nascimento: </label>
+        {{form.data_nascimento}}
+    </div>
+    <div>
+        {{ form.profissao.errors }}
+        <label>Profissão: </label>
+        {{ form.profissao}}
+    </div>
+    <div>
+        {{ form.email.errors }}
+        <label>E-mail: </label>
+        {{form.email}}
+    </div>
+    <div>
+        {{ form.sexo.errors }}
+        <label>Sexo: </label>
+        {{form.sexo}}
+    </div>
+
+    <div>
+        <input type="submit" name="Cadastrar">
+    </div>
+</form>
+</body>
+</html>

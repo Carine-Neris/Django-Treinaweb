@@ -1,9 +1,6 @@
 from django.shortcuts import render
-from .models import Cliente, Produto
-
-
-def home(request):
-    return render(request, 'index.html')
+from .models import Cliente
+from .forms import ClienteForm
 
 
 def listar_clientes(request):
@@ -11,7 +8,12 @@ def listar_clientes(request):
     return render(request, 'clientes/lista_clientes.html', {'clientes': clientes})
 
 
-def listar_produtos(request):
-    produtos = Produto.objects.all()
-    return render(request, 'produtos/lista_produto.html', {'produtos': produtos})
+def inserir_cliente(request):
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ClienteForm()
 
+    return render(request, 'clientes/form_cliente.html', {'form': form})
