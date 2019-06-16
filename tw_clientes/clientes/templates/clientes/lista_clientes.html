@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <title>TW CLIENTES </title>
-</head>
-
-<body>
-<table>
+{% extends "clientes/base.html" %}
+{% block titulo%} Lista Clientes {% endblock titulo%}
+{% block conteudo %}
+<table class="table">
     <thead>
         <tr>
             <th>Nome</th>
@@ -28,5 +22,6 @@
     </tbody>
 </table>
 
-</body>
-</html>
+<a href="{% url 'cadastrar_cliente' %}"><button class="btn btn-primary">Cadastrar</button></a>
+
+{% endblock conteudo %}
