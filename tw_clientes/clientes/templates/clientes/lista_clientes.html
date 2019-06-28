@@ -8,15 +8,20 @@
             <th>Data De Nascimento</th>
             <th>Profissão</th>
             <th>Sexo</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        {% for i in clientes %}
+        {% for cliente in clientes %}
         <tr>
-            <td><a href="{% url 'listar_cliente_id' i.id %}">{{i.nome}}</a></td>
-            <td>{{i.data_nascimento | date:'d-M-y'}}</td>
-            <td>{{i.profissao}}</td>
-            <td>{{i.sexo}}</td>
+            <td><a href="{% url 'listar_cliente_id' cliente.id %}">{{cliente.nome}}</a></td>
+            <td>{{cliente.data_nascimento | date:'d-M-y'}}</td>
+            <td>{{cliente.profissao}}</td>
+            <td>{{cliente.sexo}}</td>
+            <td>
+                <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
+                <a href="#">Remover</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
