@@ -1,7 +1,7 @@
 {% extends "clientes/base.html" %}
 {% load meus_filtros %}
-{% block titulo%} Cadastro Clientes {% endblock titulo%}
-{% block conteudo %}
+{% block title%} Cadastro Clientes {% endblock title%}
+{% block content %}
 <form method="post">
     {% csrf_token %}
     <div class="form-group">
@@ -34,4 +34,4 @@
          <input type="submit" name="Cadastrar">
     </div>
 </form>
-{% endblock conteudo %}
+{% endblock content %}
